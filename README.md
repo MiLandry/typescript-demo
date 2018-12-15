@@ -9,7 +9,8 @@ To demo and play with mocha API and Mock API
 
 ## Run Locally
 
-`yarn start`
+`tsc *.ts --watch --target ES5`
+`chrome index.html`
 
 then browse to 
 http://localhost:8080
@@ -19,9 +20,12 @@ http://localhost:8080
 `yarn test`
 
 
+
+
 ## Resources
 
-https://jestjs.io/
+https://www.youtube.com/watch?v=-PR_XqW9JJU
+https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
 
 ## License
 UNLICENSED

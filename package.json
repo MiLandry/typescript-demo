@@ -1,0 +1,8 @@
+{
+  "name": "typescript-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/MiLandry/typescript-demo.git",
+  "author": "Michael Landry <mlandryviolin@gmail.com>",
+  "license": "MIT"
+}
