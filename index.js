@@ -131,7 +131,7 @@ function GetType(val) {
 function getWheels(veh) {
     return veh.drive();
 }
-//generic class
+//generic classes
 var GenericNumber = /** @class */ (function () {
     function GenericNumber() {
     }

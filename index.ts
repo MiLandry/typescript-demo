@@ -164,7 +164,7 @@ function getWheels<w extends Vehicle>(veh: w): number { //this method takes any 
     return veh.drive();
 }
 
-//generic class
+//generic classes
 class GenericNumber<T>{
     add: (val1: T, val2: T) => T;
 }
