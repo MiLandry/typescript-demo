@@ -89,7 +89,85 @@ var getSum = function(num1: number, num2: number): number{
 
 var theSum1: number = getSum(5,2)
 
-// figure out snippets for vscode
+
+
 document.write("5 + 2 = " theSum1 + "<br />")
-//resume at 21:00
-//https://www.youtube.com/watch?v=-PR_XqW9JJU
+
+// classes and jargon
+/*
+classes consists of attributes 
+attributes consist of fields and methods
+
+*/
+class Animal {
+    public favFood: string; // a field, public access modifier
+
+    static numOfAnimals: number = 0; // accessible by every Animal instance
+
+    constructor(
+        private name: string, //If marked as private, TS will auto add to class instance
+        private owner: string
+        ){
+            Animal.numOfAnimals++; // static invoke
+        }
+    ownerInfo(){ //method, no access modifier
+    document.write(this.name + " is owned by " + this.owner + "<br />")
+    
+    static howManyAnimals(): number{
+        return Animal.numOfAnimals;
+    }
+
+    private _weight: number;
+
+    get weight(): number{
+        return this._weight;
+    }
+
+    set weight(weight){
+        this._weight = weight;
+    }
+}
+
+var spot = new Animal("Spot", "dug");
+
+spot.ownerInfo();
+
+spot.weight = 100;
+
+class Dog extends Animal{
+    constructor(name: string, owner: string) {
+        super(name, owner);
+        Dog.numOfAnimals++;
+    }
+}
+
+var grover = new Dog("Grover" + "Jimmy") //is instanceof Animal
+
+interface Vehicle {
+    drive(): any; // implementing class can ?return whatever type it wants?
+}
+
+class Car implements Vehicle{
+    constructor(private wheel: number) {}
+
+    drive(): void{
+        console.log("vroom");
+    }
+}
+
+// generic functions TS
+function GetType<T>(val: T): string{ //<T> is datatype marker
+    return typeof(val);
+}
+
+function getWheels<w extends Vehicle>(veh: w): number { //this method takes any type that extends a super
+    return veh.drive();
+}
+
+//generic class
+class GenericNumber<T>{
+    add: (val1: T, val2: T) => T;
+}
+
+var aNumber = new GenericNumber<number>();
+aNumber.add = function(x, y){return x + y;}
